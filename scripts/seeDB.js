@@ -8,7 +8,7 @@ mongoose.connect(
     { useNewUrlParser: true }
 );
 
-const itemSeed = [
+const bookSeed = [
     {
         title: " ",
         subtitle: " ",
@@ -30,7 +30,7 @@ const itemSeed = [
 ];
 
 db.Book.remove({})
-    .then(() => db.Book.collection.insertMany(itemSeed))
+    .then(() => db.Book.collection.insertMany(bookSeed))
     .then((data) => {
         console.log(data.result.n + " records inserted!");
     })

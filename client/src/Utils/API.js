@@ -2,22 +2,22 @@ import axios from "axios";
 
 export default {
 	// Gets all items
-	getItems: function () {
+	getBooks: function () {
 		return axios.get("/api/books");
 	},
 	// Gets the item with the given id
-	getItem: function (id) {
+	getBook: function (id) {
 		return axios.get("/api/books/" + id);
 	},
-	updateItem: function (id, itemData) {
-		return axios.put("/api/books/" + id, itemData);
+	updateBook: function (id, bookData) {
+		return axios.put("/api/books/" + id, bookData);
 	},
 	// Deletes the item with the given id
-	deleteItem: function (id) {
+	deleteBook: function (id) {
 		return axios.delete("/api/books/" + id);
 	},
 	// Saves an item to the database
-	saveItem: function (itemData) {
-		return axios.post("/api/books", itemData);
+	saveBook: function (bookData) {
+		return axios.post("/api/books", bookData);
 	},
 };

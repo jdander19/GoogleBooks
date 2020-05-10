@@ -3,29 +3,33 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.11",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {},
   "scripts": {
-      "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-      "start:prod": "node server.js",
-      "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-      "client": "cd client && npm run start",
-      "seed": "node scripts/seedDB.js",
-      "install": "cd client && npm install",
-      "build": "cd client && npm run build",
-      "heroku-postbuild": "npm run build"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jdander19/GoogleBooks.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jdander19/GoogleBooks/issues"
   },
-  "homepage": "https://github.com/jdander19/GoogleBooks#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "5.^5.9.9",
-    "nodemon": "^2.0.3"
-  }
+  "homepage": "https://github.com/jdander19/GoogleBooks#readme"
 }

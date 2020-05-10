@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
-import API from "../Utils/API";
+import API from "../Utils/API.js";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListBook } from "../components/List";
@@ -9,6 +9,7 @@ import { Input, FormBtn } from "../components/Form";
 
 class Books extends Component {
 	state = {
+		books: [],
 		title: " ",
         subtitle: " ",
         authors: " ",
@@ -26,7 +27,8 @@ class Books extends Component {
 		API.getBooks()
 			.then((res) =>
 				this.setState({
-					title: res.data,
+					books: res.data,
+					title: "",
 					subtitle: " ",
 					authors: " ",
 					link: "",
@@ -55,7 +57,7 @@ class Books extends Component {
 	handleFormSubmit = (event) => {
 		event.preventDefault();
 		if (this.state.title && this.state.authors) {
-			API.saveItem({
+			API.saveBook({
 				title: this.state.title,
 				authors: this.state.authors,
 			})
